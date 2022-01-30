@@ -16,9 +16,9 @@
        docker-compose up --build
    ```
 
-   ### ii. running client only
+   ### ii. running only client
 
-   -  Run this command inside /tolli-app
+   -  Run this command inside /client
 
    ```bash
        docker-compose up --build
@@ -26,7 +26,7 @@
 
    ### iii. running only server
 
-   -  Run this command inside /tolli-server
+   -  Run this command inside /server
 
    ```bash
        docker-compose up --build
