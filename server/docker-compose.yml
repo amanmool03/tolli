@@ -1,0 +1,18 @@
+version: '3'
+services:
+   mongo:
+      container_name: mongo
+      image: mongo
+      # ports:
+      #    - '27017:27017'
+   server:
+      build:
+         context: .
+         dockerfile: Dockerfile.dev
+      ports:
+         - '8080:8080'
+      volumes:
+         - /app/node_modules
+         - .:/app
+      links:
+         - mongo

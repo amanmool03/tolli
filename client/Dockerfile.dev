@@ -1,0 +1,12 @@
+FROM node:alpine 
+
+WORKDIR /app
+
+COPY package.json .
+
+RUN npm install $(node -e "var o = require('./package.json').devDependencies; for (var p in o) { console.log(p + '@' + o[p]); }")
+
+COPY . . 
+
+CMD ["npm","run","dev"]
+
