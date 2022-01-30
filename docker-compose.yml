@@ -8,21 +8,21 @@ services:
 
    api_server:
       build:
-         context: ./tolli-server
+         context: ./server
          dockerfile: Dockerfile.dev
       volumes:
          - /app/node_modules
-         - ./tolli-server:/app
+         - ./server:/app
       restart: always
 
    client:
       build:
-         context: ./tolli-app
+         context: ./client
          dockerfile: Dockerfile.dev
       #remove this volume in production
       volumes:
          - /app/node_modules
-         - ./tolli-app:/app
+         - ./client:/app
 
    nginx:
       restart: always
