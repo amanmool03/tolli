@@ -32,6 +32,8 @@
        docker-compose up --build
    ```
 
+3. Then goto localhost:3050
+
 ### Note: You only need " --build " flag if you are running app for the first time or if you install new packages.
 
 # FOR PRODUCTION MODE
