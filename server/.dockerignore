@@ -1,10 +1,7 @@
-.git/
+.git
 .gitignore
-.next/
+.next
 .env
-.dockerignore
-Dockerfile
-Dockerfile.dev
-
-docker-compose.yml
-node_modules/
+*Dockerfile*
+node_modules
+*.md

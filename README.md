@@ -36,6 +36,7 @@
 
 # FOR PRODUCTION MODE
 
-1. Remove all volumes inside docker-compose.yml
+1. Remove all volumes bindings inside docker-compose.yml
 2. Rename Dockerfile.dev to Dockerfile inside docker-compose.yml
-3. 
+3. remove websocket part from /nginx/default.config
+4. Specifying a restart policy like restart: always to avoid downtime
