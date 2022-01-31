@@ -1,13 +1,14 @@
 version: '3'
 services:
-   mongo:
-      container_name: mongo
-      image: mongo
-      restart: always
-      ports:
-         - '27017:27017'
-      volumes:
-         - ./data/db:/data/db
+   # we will user mongodb atlas (database as a servive)
+   # mongo:
+   #    container_name: mongo
+   #    image: mongo
+   #    restart: always
+   #    ports:
+   #       - '27017:27017'
+   #    volumes:
+   #       - ./data/db:/data/db
 
    api_server:
       build:
@@ -17,8 +18,9 @@ services:
          - /app/node_modules
          - ./server:/app
       restart: always
-      links:
-         - mongo # so we can reference mongo using name
+      #  / uncomment if you start mongo container
+      # links:
+      # - mongo # so we can reference mongo using name
 
    client:
       build:
@@ -27,6 +29,7 @@ services:
       #remove this volume in production
       volumes:
          - /app/node_modules
+         - /app/.next
          - ./client:/app
 
    nginx:
